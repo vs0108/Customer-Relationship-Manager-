@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Customer Relationship Management</title>
+	<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+	<script>
+		$(document).ready(function() {
+			$("#add-customer").click(function() {
+				var name = $("#name").val();
+				var email = $("#email").val();
+				var phone = $("#phone").val();
+				if (name != "" && email != "" && phone != "") {
+					$("#customers").append("<tr><td>" + name + "</td><td>" + email + "</td><td>" + phone + "</td></tr>");
+					$("#name").val("");
+					$("#email").val("");
+					$("#phone").val("");
+				}
+				else {
+					alert("Please fill in all fields.");
+				}
+			});
+		});
+	</script>
+</head>
+<body>
+	<h1>Customer Relationship Management</h1>
+
+	<table>
+		<thead>
+			<tr>
+				<th>Name</th>
+				<th>Email</th>
+				<th>Phone</th>
+			</tr>
+		</thead>
+		<tbody id="customers">
+			<tr>
+				<td>John Smith</td>
+				<td>john.smith@example.com</td>
+				<td>555-1234</td>
+			</tr>
+			<tr>
+				<td>Jane Doe</td>
+				<td>jane.doe@example.com</td>
+				<td>555-5678</td>
+			</tr>
+		</tbody>
+	</table>
+
+	<h2>Add Customer</h2>
+
+	<form>
+		<label for="name">Name:</label>
+		<input type="text" id="name" name="name"><br>
+
+		<label for="email">Email:</label>
+		<input type="email" id="email" name="email"><br>
+
+		<label for="phone">Phone:</label>
+		<input type="tel" id="phone" name="phone"><br>
+
+		<input type="button" id="add-customer" value="Add Customer">
+	</form>
+</body>
+</html>

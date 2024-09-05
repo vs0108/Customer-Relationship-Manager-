@@ -1,0 +1,152 @@
+import java.util.ArrayList;
+import java.util.Scanner;
+import java.lang.String;
+class Customer 
+{
+    private String name;
+    private String address;
+    private String phone;
+
+    public String getName() 
+    {
+    return name;
+    }
+
+    public void setName(String name) 
+    {
+    this.name = name;
+    }
+
+    public String getAddress() 
+    {
+    return address;
+    }
+
+    public void setAddress(String address)
+    {
+    this.address = address;
+    }
+
+    public String getPhone()
+    {
+    return phone;
+    }
+
+    public void setPhone(String phone)
+    {
+    this.phone = phone;
+    }
+}
+
+class CRM 
+{
+  private ArrayList<Customer> customers;
+  // Add methods to add, remove, and search for customers.
+  // Add methods to update customer information and manage interactions.
+
+  public ArrayList<Customer> getCustomers()
+  {
+	  return customers;
+  }
+
+  public void setCustomers(ArrayList<Customer> customers) 
+  {
+	  this.customers = customers;
+  }
+
+  public void addCustomer(Customer customer)
+  {
+	  if (customers == null) 
+	  	{
+		  customers = new ArrayList<Customer>();
+	  	}	
+	  	customers.add(customer);
+  }
+
+  public void removeCustomer(Customer customer) 
+  {
+	  if (customers != null) 
+	  	{
+		  customers.remove(customer);
+	  	}
+  }
+
+  public Customer searchCustomer(String name, String address, String phone)
+  {
+	  	if (customers != null)
+	  	{
+	  		for (Customer c : customers)
+	      {
+	  			if (c.getName().equals(name) || c.getAddress().equals(address) || c.getPhone().equals(phone))
+	  			{
+	  				return c;
+	            }
+	      }
+        }
+	  return null;
+  }
+}
+
+public static void main(String[] args) 
+{
+  CRM crm = new CRM();
+  Scanner sc = new Scanner(System.in);
+  while (true) 
+  {
+    System.out.println("1. Add customer");
+    System.out.println("2. Remove customer");
+    System.out.println("3. Search customer");
+    System.out.println("4. Exit");
+    System.out.print("Enter your choice: ");
+    int choice = sc.nextInt();
+    switch (choice) 
+    {
+      case 1:
+        System.out.print("Enter customer name: ");
+        String name = sc.nextLine();
+        System.out.print("Enter customer address: ");
+        String address = sc.nextLine();
+        System.out.print("Enter customer phone: ");
+        String phone = sc.nextLine();
+        Customer customer = new Customer();
+        customer.setName(name);
+        customer.setAddress(address);
+        customer.setPhone(phone);
+        crm.addCustomer(customer);
+        break;
+        // Add customer logic.
+
+      case 2:
+        System.out.print("Remove customer name: ");
+        String name1 = sc.nextLine();
+        System.out.print("Remove customer address: ");
+        String address1 = sc.nextLine();
+        System.out.print("Remove customer phone: ");
+        String phone1 = sc.nextLine();
+        Customer customer1 = new Customer();
+        customer1.setName(name1);
+        customer1.setAddress(address1);
+        customer1.setPhone(phone1);
+        crm.removeCustomer(customer1);
+        // Remove customer logic.
+        break;
+      case 3:
+        System.out.print("Search customer name: ");
+        String name11 = sc.nextLine();
+        System.out.print("search customer address: ");
+        String address11 = sc.nextLine();
+        System.out.print("Search customer phone: ");
+        String phone2 = sc.nextLine();
+        Customer customer2 = new Customer();
+        customer2.setName(name11);
+        customer2.setAddress(address11);
+        customer2.setPhone(phone2);
+        crm.addCustomer(customer2);
+        // Remove customer logic.
+        // Search customer logic.
+        break;
+      case 4:
+        System.exit(0);
+    }
+  }
+}
