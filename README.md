@@ -89,14 +89,23 @@ Compile and run the console program:
 
 CMS/
 │
+
 ├── GUI/
+
 │   ├── CMS.java  # Java Swing-based GUI application
+
 │   └── cus_ser.jpg  # Background image for the welcome screen
+
 │
+
 ├── Web/
+
 │   └── index.html  # Web-based customer management system
+
 │
+
 └── Console/
+
     └── CRM.java  # Console-based customer management system
 
 # Future Enhancements
