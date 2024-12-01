@@ -1,6 +1,5 @@
 # Customer Relationship Management System (CRMS)
 
-# Overview
 The Customer Management System (CMS) is a comprehensive solution for managing customer information. 
 
 It includes implementations in Java (GUI-based and console-based) and a simple web-based interface using HTML and JavaScript.
